@@ -1,0 +1,18 @@
+#Longest Substring Without Repeating Characters
+
+
+def lengthOfLongestSubstring(s: str) -> int:
+    import numpy as np
+    ls = list(s)
+    repetition = [0]
+    for i in range(len(ls)-1):
+        if ls[i] == ls[i+1]:
+            repetition.append(i)
+    repet = np.array(repetition)
+    length = np.diff(repet)
+    print(max(length))
+
+s1 = "abcabcbb"
+s2 = "bbbbb"
+s3 = "pwwkewkd22iald"
+lengthOfLongestSubstring(s3)
